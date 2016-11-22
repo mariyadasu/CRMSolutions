@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><img src="../images/logo.png" alt=""></a>
+                </div>
+                <div class="mobile-nav hidden-sm hidden-md hidden-lg"></div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#"><i class="fa fa-search"></i> <span class="hidden-xs">Search</span></a></li>
+                    <li><a href="#"><i class="fa fa-question hidden-lg hidden-md hidden-sm"></i> <span class="hidden-xs">Help</span></a></li>
+                    <li><a href="#"><i class="fa fa-user-plus hidden-lg hidden-md hidden-sm"></i> <span class="hidden-xs">Sign Up</span></a></li>
+                    <li><a href="#"><i class="fa fa-sign-out hidden-lg hidden-md hidden-sm"></i> <span class="hidden-xs">Login</span></a></li>
+                </ul>
+                <button class="btn form-btn">Are you a Former</button>
+            </div>
+        </nav>
+    </header>
+    @*<div class="container-fluid home-search">
+        <div class="container">
+            <div class="container-fluid">
+               
+                    @RenderBody()
+               
+            </div>
+        
+        </div>
+    </div>*@
+    <div class="search front">
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

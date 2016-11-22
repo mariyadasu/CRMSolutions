@@ -1,0 +1,12 @@
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\CRM.Data.dll.config
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\CRM.Data.dll
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\CRM.Data.pdb
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\CRM.Core.dll
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\EntityFramework.dll
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\EntityFramework.SqlServer.dll
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\CRM.Core.pdb
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\EntityFramework.xml
+H:\Ganapathi\CRM.Solution\CRM.Data\bin\Debug\EntityFramework.SqlServer.xml
+H:\Ganapathi\CRM.Solution\CRM.Data\obj\Debug\CRM.Data.csprojResolveAssemblyReference.cache
+H:\Ganapathi\CRM.Solution\CRM.Data\obj\Debug\CRM.Data.dll
+H:\Ganapathi\CRM.Solution\CRM.Data\obj\Debug\CRM.Data.pdb

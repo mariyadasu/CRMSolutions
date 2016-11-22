@@ -1,0 +1,230 @@
+﻿@model CRM.Project.Models.HR.EmployeeRegistrationViewModel
+@using CRM.Core.Entities;
+
+@{
+    ViewBag.Title = "Employee Registration";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<h2>Employee Registration</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+    
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmployeeCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmployeeCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmployeeCode, "", new { @class = "text-danger" })
+              
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmployeeName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EmployeeName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EmployeeName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GenderId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.GenderId, (SelectList)ViewBag.Gender, "Select Gender", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GenderId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DOJ, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DOJ, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DOJ, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BranchId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.BranchId, (SelectList)ViewBag.Branches, "Select Branch", new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.ValidationMessageFor(model => model.BranchId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DepartmentId, (SelectList)ViewBag.Departments, "Select Department", new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DesignationId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DesignationId, (SelectList)ViewBag.Designations, "Select Designation", new { htmlAttributes = new { @class = "form-control" } })
+
+                @Html.ValidationMessageFor(model => model.DesignationId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+
+            @Html.LabelFor(model => model.ShiftId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ShiftId, (SelectList)ViewBag.Shifts, "Select Shift", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ShiftId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+                @if (ViewBag.Msg!=null)
+                {
+                    <span class="red-text">@ViewBag.Msg</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                Employee Code
+            </th>
+            <th>
+                Employee Name
+            </th>
+            <th>
+                DOB
+            </th>
+            <th>
+                Gender
+            </th>
+            <th>
+               Address
+            </th>
+            <th>
+                Mobile No
+            </th>
+            <th>
+               Email
+            </th>
+            <th>
+                DOJ
+            </th>
+            <th>
+               Branch
+            </th>
+            <th>
+               Department
+            </th>
+            <th>
+               Designation
+            </th>
+            <th>
+                Shift
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (Trans_EmployeeInfo item in (List<Trans_EmployeeInfo>)ViewBag.Employees)
+        {
+            <tr>
+                <td>
+                    @item.EmployeeCode
+                </td>
+                <td>
+                    @item.EmployeeName
+                </td>
+                <td>
+                    @item.DateOfBirth
+                   
+                </td>
+                <td>
+                    @item.Gender.Name
+                  
+                </td>
+                <td>
+                    @item.Address
+                 
+                </td>
+                <td>
+                    @item.PhoneNo
+                   
+                </td>
+                <td>
+                    @item.Email
+                   
+                </td>
+                <td>
+                    @item.DOJ
+                  
+                </td>
+                <td>
+                    @item.Branch.Name
+                   
+                </td>
+                <td>
+                    @item.Department.Name
+                   
+                </td>
+                <td>
+                    @item.Designation.Name
+                   
+                </td>
+                <td>
+                    @item.Shift.Name
+                  
+                </td>
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                    @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+

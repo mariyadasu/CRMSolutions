@@ -1,0 +1,94 @@
+﻿@model IEnumerable<CRM.Project.Models.HR.EmployeeSalaryViewModel>
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_HRLayout.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PFAccNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankAccNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InsurancyPolicyNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BasicSalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConveyanceAllowance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SpacialAllowance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalAllowance)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PFAccNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankAccNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InsurancyPolicyNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConveyanceAllowance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpacialAllowance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalAllowance)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

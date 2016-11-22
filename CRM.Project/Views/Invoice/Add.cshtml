@@ -1,0 +1,158 @@
+﻿@model CRM.Project.Models.Inventory.InvoiceViewModel
+@using CRM.Core.Entities
+
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_InventoryLayout.cshtml";
+}
+
+<h2>Add Invoice</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CustomerId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CustomerId, (SelectList)ViewBag.Customers, "Select Customer", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CustomerId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProductId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ProductId, (SelectList)ViewBag.Products, "Select Product", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProductId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.QuantityId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.QuantityId, (SelectList)ViewBag.Quantites, "Select Quantity", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.QuantityId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tax, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tax, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tax, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+                @if (ViewBag.Msg != null)
+                {
+                    <span class="red-text">@ViewBag.Msg</span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <table class="table">
+        <tr>
+            <th>
+                Invoice No
+            </th>
+            
+            <th>
+                Custmoer Code
+            </th>
+            <th>
+                Customer Name
+
+            </th>
+            <th>
+                Mobile No
+
+            </th>
+            <th>
+                Product Name
+
+            </th>
+            <th>
+                Quantity
+
+            </th>
+            <th>
+                Cost
+
+            </th>
+            <th>
+                Tax
+
+            </th>
+            <th>
+                Total
+
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (Trans_InvoiceInfo item in (List<Trans_InvoiceInfo>)ViewBag.Invoices)
+        {
+            <tr>
+                <td>
+                    @item.InvoiceNo
+                </td>
+                
+                <td>
+                    @item.Customer.CustmoerCode
+                </td>
+                <td>
+                    @item.Customer.CustomerName
+
+                </td>
+                <td>
+                    @item.Customer.MobileNo
+
+                </td>
+                <td>
+                    @item.Product.Name
+
+                </td>
+                <td>
+                    @item.Quantity.Name
+
+                </td>
+                <td>
+                    @item.Cost
+
+                </td>
+                <td>
+                    @item.Tax
+
+                </td>
+                <td>
+                    @item.Total
+
+                </td>
+
+                <td>
+                    @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                </td>
+            </tr>
+        }
+
+
+    </table>
+}
