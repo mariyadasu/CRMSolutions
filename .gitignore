@@ -1,0 +1,9 @@
+[Bb]in/
+[Oo]bj/
+packages/
+vs/
+.vs/
+.vs
+/.vs
+/.vs/
+/src/TestResults
